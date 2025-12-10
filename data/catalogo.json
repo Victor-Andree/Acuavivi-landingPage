@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "nombre": "Pez Guppy",
+        "precio": 5,
+        "descripcion": "Colorido y fácil de cuidar.",
+        "imagen": "/assets/catalogo/guppy.png"
+    },
+    {
+        "id": 2,
+        "nombre": "Corydora Panda",
+        "precio": 12,
+        "descripcion": "Pez de fondo muy pacífico.",
+        "imagen": "/assets/catalogo/corydora-panda.png"
+    }
+]
