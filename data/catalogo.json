@@ -4,13 +4,55 @@
         "nombre": "Pez Guppy",
         "precio": 5,
         "descripcion": "Colorido y fácil de cuidar.",
-        "imagen": "/assets/catalogo/guppy.png"
+        "imagen": "/assets/img/catalogo/guppy.png"
     },
     {
         "id": 2,
         "nombre": "Corydora Panda",
         "precio": 12,
         "descripcion": "Pez de fondo muy pacífico.",
-        "imagen": "/assets/catalogo/corydora-panda.png"
+        "imagen": "/assets/img/catalogo/corydoraPanda.png"
+    },
+    {
+        "id": 3,
+        "nombre": "Tortuga Amazonica (Charapita)",
+        "precio": 35,
+        "descripcion": "Mitad terrestre y acuatica, bastante amigable.",
+        "imagen": "/assets/img/catalogo/charapita.png"
+    },
+    {
+        "id": 4,
+        "nombre": "Ajolote",
+        "precio": 25,
+        "descripcion": " Salamandra acuática única, conocida como el Peter Pan de los anfibios por neotenia.",
+        "imagen": "/assets/img/catalogo/ajolote.png"
+    },
+    {
+        "id": 5,
+        "nombre": "Carachama",
+        "precio": 25,
+        "descripcion": "Pez amazónico prehistórico, similar a un bagre, con una coraza de escamas gruesas, boca ventral con ventosa para adherirse a rocas.",
+        "imagen": "/assets/img/catalogo/carachama.png"
+    },
+    {
+        "id": 6,
+        "nombre": "Goldfish",
+        "precio": 25,
+        "descripcion": "Pez de agua fría, resistente y omnívoro, conocido por su coloración que varía de naranja a blanco, rojo o incluso negro.",
+        "imagen": "/assets/img/catalogo/goldfish.png"
+    },
+    {
+        "id": 7,
+        "nombre": "Escalar",
+        "precio": 25,
+        "descripcion": "Es un cíclido amazónico famoso por su cuerpo alto y discoidal, aletas largas tipo flecha y rayas verticales oscuras sobre fondo plateado o dorado, con muchas variedades de coloración.",
+        "imagen": "/assets/img/catalogo/escalar.png"
+    },
+    {
+        "id": 8,
+        "nombre": "Molly Espada",
+        "precio": 25,
+        "descripcion": "Pez de agua dulce conocido por su aleta caudal en forma de espada y su naturaleza pacífica.",
+        "imagen": "/assets/img/catalogo/mollyEspada.png"
     }
 ]
