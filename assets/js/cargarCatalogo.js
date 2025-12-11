@@ -20,7 +20,6 @@ fetch("/data/catalogo.json")
                     <img src="${prod.imagen}" alt="${prod.nombre}">
                     <h3>${prod.nombre}</h3>
                     <p>${prod.descripcion}</p>
-                    <span class="precio">S/ ${prod.precio}</span>
                 `;
 
                 contenedor.appendChild(card);
