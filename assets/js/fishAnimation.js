@@ -112,12 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (logo) {
             logo.addEventListener('click', (e) => {
                 e.preventDefault();
-                fishAnimation.createFishAnimation(3000); // 3 segundos de animación
-                
-                // Redirigir al inicio después de la animación
-                setTimeout(() => {
-                    window.location.href = 'index.html';
-                }, 3000);
+                // Mostrar animación sin redirigir
+                fishAnimation.createFishAnimation(2500); // 2.5 segundos de animación
             });
             logo.style.cursor = 'pointer';
         }

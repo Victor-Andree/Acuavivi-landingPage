@@ -23,8 +23,8 @@ function cargar(id, ruta) {
 
 // Función para agregar animaciones a los enlaces de navegación
 function agregarAnimacionesNavegacion() {
-    // Seleccionar todos los enlaces internos: en el nav, footer y logo
-    const navLinks = document.querySelectorAll('nav ul li a, .logo, footer a[href*=".html"]');
+    // Seleccionar todos los enlaces internos: en el nav y footer (excluyendo el logo)
+    const navLinks = document.querySelectorAll('nav ul li a, footer a[href*=".html"]');
     
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
