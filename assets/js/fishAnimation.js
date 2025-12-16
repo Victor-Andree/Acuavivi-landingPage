@@ -103,19 +103,3 @@ class FishAnimation {
 
 // Inicializar la animación de peces
 const fishAnimation = new FishAnimation();
-
-// Ejecutar animación cuando se carga la página (opcional)
-document.addEventListener('DOMContentLoaded', () => {
-    // Agregar event listener al logo
-    setTimeout(() => {
-        const logo = document.querySelector('.logo');
-        if (logo) {
-            logo.addEventListener('click', (e) => {
-                e.preventDefault();
-                // Mostrar animación sin redirigir
-                fishAnimation.createFishAnimation(2500); // 2.5 segundos de animación
-            });
-            logo.style.cursor = 'pointer';
-        }
-    }, 500);
-});

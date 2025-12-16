@@ -2,20 +2,40 @@ const SHEET_ID = "1FiYGv3TJEQHlyVryMmOuutQvKDZQ1kHMXqtVEEUHta8";
 const SHEET_NAME = "Hoja 1";
 const API_URL = `https://opensheet.elk.sh/${SHEET_ID}/${encodeURIComponent(SHEET_NAME)}`;
 
-fetch(API_URL)
-    .then(res => res.json())
-    .then(productos => {
+async function cargarCatalogo() {
+    const contenedor = document.getElementById("lista-productos");
+    const paginacionDiv = document.getElementById("paginacion");
 
-        console.log("DATA:", productos);
+    try {
+        const res = await fetch(API_URL);
+        const productos = await res.json();
 
-        const contenedor = document.getElementById("lista-productos");
-        const paginacionDiv = document.getElementById("paginacion");
+        console.log("DATA RAW:", productos);
+
+        contenedor.innerHTML = "";
 
         const productosPorPagina = 4;
         let paginaActual = 1;
 
         function normalizarDisponible(valor) {
             return valor && valor.trim().toLowerCase() === "si";
+        }
+
+        function convertirDriveLink(url) {
+            if (!url) return "";
+
+            const limpio = url
+                .trim()
+                .replace(/\s/g, "")
+                .replace(/["']/g, "");
+
+            const match =
+                limpio.match(/\/d\/([^/]+)/) ||
+                limpio.match(/id=([^&]+)/);
+
+            if (!match) return limpio;
+
+            return `https://drive.google.com/uc?id=${match[1]}`;
         }
 
         function mostrarPagina(pagina) {
@@ -27,6 +47,7 @@ fetch(API_URL)
 
             productosEnPagina.forEach(prod => {
                 const disponible = normalizarDisponible(prod.disponible);
+                const imagenDrive = convertirDriveLink(prod.imagen);
 
                 const card = document.createElement("div");
                 card.classList.add("card-producto");
@@ -36,9 +57,14 @@ fetch(API_URL)
                         ${disponible ? "Disponible" : "No disponible"}
                     </div>
 
-                    <img src="${prod.imagen?.trim()}" alt="${prod.nombre}">
+                    <img 
+                        src="https://images.weserv.nl/?url=${encodeURIComponent(imagenDrive)}"
+                        alt="${prod.nombre || "Producto"}"
+                        loading="lazy"
+                        onerror="this.src='assets/img/no-image.png'"
+                    >
 
-                    <h3>${prod.nombre}</h3>
+                    <h3>${prod.nombre || ""}</h3>
                     <p>${prod.descripcion || ""}</p>
                 `;
 
@@ -69,7 +95,11 @@ fetch(API_URL)
         }
 
         mostrarPagina(paginaActual);
-    })
-    .catch(error => {
+
+    } catch (error) {
         console.error("Error cargando catálogo:", error);
-    });
+        contenedor.innerHTML = "<p>Error cargando catálogo</p>";
+    }
+}
+
+cargarCatalogo();

@@ -58,6 +58,11 @@ header {
     gap: 14px;
 }
 
+.logo {
+    cursor: default;
+    pointer-events: none;
+}
+
 .logo img {
     height: 64px;   /* AJUSTA AQUÍ */
     width: auto;
@@ -856,4 +861,27 @@ footer {
 
 .badge.rojo {
     background: #e74c3c;
+}
+
+/* ===== Skeleton Loader ===== */
+.skeleton-card {
+    height: 280px;
+    border-radius: 14px;
+    background: linear-gradient(
+        90deg,
+        #e4e4e4 25%,
+        #f1f1f1 37%,
+        #e4e4e4 63%
+    );
+    background-size: 400% 100%;
+    animation: skeleton-loading 1.4s ease infinite;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: -100% 0;
+    }
 }
